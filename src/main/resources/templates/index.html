@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>초기화면</title>
+  <style>
+    h3 {
+    text-align: center;
+    color: #00b3a8;
+    }
+
+    .MPContent,
+    .MPContent2 {
+    list-style: none;
+    text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h3>초기화면</h3>
+<hr>
+<ul id="mainpage">
+  <li class="MPContent"><a href="/products" th:href="@{/products}">상품전체조회 및 관리</a></li>
+  <li class="MPContent2"><a href="/products/add" th:href="@{/products/add}">상품등록</a></li>
+</ul>
+</body>
+<script>
+    const $btnAdd = document.getElementById('btnAdd');
+    const btnAdd_h = e => location.href = `/products/add`;
+    $btnAdd.addEventListener('click',btnAdd_h,false);
+  </script>
+</html>
